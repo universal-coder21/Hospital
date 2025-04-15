@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background-size: cover;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://s3-alpha-sig.figma.com/img/150f/378a/e610f1f91457c1c26cfa10b91a22f87b?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bLn559d6Rv97HbsnK4NGgKsiK3mJoywJ6mCSWvidhCpExyxfDQCLs15WNwXcyrA3j9bZRIOEb2xlMkJgC0lBn8lOxPYgVWQ-x5lpWrdJ8C5PDXACeztmcw1cjlupT1xJMLSXDOMaNSJZDB2uZy8Y-jCYFVg4mbvHHt6sPY6IDcXsouwsbiUjtOjLhlllYcY7agfIqleO3egNIUx1EAWgFENqE29Gnu7M9bhCtWi7Z5GY4A8KPMQ7VKcgpOnmvQZPnrlf0g~xaqkbGtvrYKo0nstqnY1B-o0DsIJUCG~6SzTahHhTEgibz3CLssjufPEr5prCc9oD1bjwNwKk1~LN4w__);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+    /* darkens only the image */
+    z-index: 0;
+}
+
+header>* {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Navigation Bar */
+header nav {
+    width: 90%;
+    max-width: 1200px;
+    height: 60px;
+    background-color: rgba(124, 125, 129);
+    margin: 18px auto 0;
+    border-radius: 8px;
+    position: relative;
+    opacity: 0.8;
+    /* ✅ FIXED */
+    display: flex;
+    filter: brightness(1.1);
+    align-items: center;
+    justify-content: center;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    color: white;
+    padding: 0 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+header nav button {
+    width: 150px;
+    height: 42px;
+    border-radius: 7px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: white;
+    color: blue;
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Logo image */
+header nav ul li img {
+    height: 55px;
+    width: 123px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+}
+
+/* Headline Section */
+.afterNav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    /* background-color: rgba(0, 0, 0, 0.3); ✅ Makes text readable */
+}
+
+.afterNav h1 {
+    font-size: 32px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    /* line-height: 69px; */
+}
+
+.afterNav span {
+    font-weight: 700;
+}
+
+.afterNav p {
+    transform: rotate(270deg) translate(9px, 369px);
+}
