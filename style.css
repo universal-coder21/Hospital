@@ -43,6 +43,59 @@ header>* {
     z-index: 1;
 }
 
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    transition: transform 0.4s;
+}
+
+.menu-toggle i {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.4s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+
+}
+
+/* Close button for nav */
+.close-nav {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.close-nav i {
+    color: #B197FC;
+    font-size: 24px;
+    transition: transform 0.4s;
+    /* move the transition here */
+}
+
+.close-nav i:hover {
+    transform: rotate(90deg);
+
+}
+
+.close-nav:hover {
+    background-color: #f0f0f0;
+
+}
+
 
 /* Navigation Bar */
 header nav {
@@ -59,6 +112,10 @@ header nav {
     filter: brightness(1.1);
     align-items: center;
     justify-content: center;
+}
+
+header nav ul button:hover {
+    background-color: #f0f0f0;
 }
 
 header nav ul {
@@ -109,7 +166,6 @@ header nav ul li img {
     color: white;
     text-align: center;
     position: relative;
-    /* background-color: rgba(0, 0, 0, 0.3); ✅ Makes text readable */
 }
 
 .afterNav h1 {
@@ -131,4 +187,80 @@ header nav ul li img {
     transform: rotate(270deg);
     position: absolute;
     right: 0;
+}
+
+.hidehamberg {
+    display: none;
+    transition: 0.4s;
+}
+
+@media screen and (max-width:480px) {
+    header {
+        height: 350px;
+    }
+
+    .afterNav h1 {
+        font-size: 22px;
+    }
+
+    header nav button {
+        width: 100px;
+        height: 36px;
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .close-nav {
+        display: block;
+    }
+
+    header nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: rgba(124, 125, 129, 0.95);
+        margin: 0;
+        border-radius: 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+        z-index: 10;
+    }
+
+    header nav.active {
+        transform: translateY(0);
+        /* display: none; */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    header nav ul li img {
+        height: 45px;
+        width: 100px;
+    }
+
+    .afterNav h1 {
+        font-size: 26px;
+    }
+
+    .afterNav p {
+        transform: none;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
 }

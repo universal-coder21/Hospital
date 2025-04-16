@@ -5,12 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Font Awesome CDN (old v5) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
-
+<!-- <i class="fa-solid fa-xmark" style="color: #B197FC;"></i> cross icon -->
+<!-- <i class="fa-solid fa-bars fa-beat-fade" style="color: #B197FC;"></i> hamberg icon -->
 <body>
     <header>
-        <nav>
+        <button class="menu-toggle " id="menuToggle">
+            <i class="fa-solid fa-bars fa-lg" id="menuIcon" style="color: #B197FC;"></i>
+        </button>
+        <nav id="mainNav">
+            <button class="close-nav" id="closeNav">
+                <i class="fa-solid fa-xmark fa-lg" style="color: #B197FC;"></i>
+            </button>
             <ul>
                 <li>
                     <a href="">Startseite</a>
@@ -49,6 +59,38 @@
             <p>+49 123 456 789</p>
         </div>
     </header>
+<script>
+    let haberg = document.getElementById('menuToggle')
+        // Mobile menu toggle functionality
+        haberg.addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.add('active');
+            // haberg.classList.add('hidehamberg')
+            document.querySelector("#menuIcon").classList.add("hidehamberg")
+        });
+
+        // Close button inside navbar functionality
+        document.getElementById('closeNav').addEventListener('click', function() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.remove('active');
+            document.querySelector("#menuIcon").classList.remove("hidehamberg")
+
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mainNav');
+            const toggle = document.getElementById('menuToggle');
+            const closeNav = document.getElementById('closeNav');
+            
+            if (!nav.contains(event.target) && !toggle.contains(event.target) && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+            document.querySelector("#menuIcon").classList.remove("hidehamberg")
+
+            }
+        });
+</script>
 </body>
+
 
 </html>
