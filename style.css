@@ -86,10 +86,10 @@ header>* {
     /* move the transition here */
 }
 
-.close-nav i:hover {
+.close-nav:hover i {
     transform: rotate(90deg);
-
 }
+
 
 .close-nav:hover {
     background-color: #f0f0f0;
